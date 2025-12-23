@@ -4,28 +4,28 @@ function aide(){
   return "<h2><span style=\"color:#eb926d;\">Aide :</span></h2><table>\
   <tr>\
     <td>entièrement</td>\
-    <td>Give me the complete picture</td>\
+    <td>Renvoie tout ce qu'il faut savoir !</td>\
   </tr>\
   <tr>\
     <td>à-propos</td>\
-    <td>Everything you ever wanted to know about John Smith</td>\
+    <td>A propos de moi.</td>\
   </tr>\
   <tr>\
     <td>savoir-faire</td>\
-    <td>Get to know how good John Smith is at stuff</td>\
+    <td>Mes \"skills\".</td>\
+  </tr>\
+  <tr>\
+    <td>trad-mc</td>\
+    <td>[Projet] : Traduction de Minecraft en Bourguignon-Morvandiau du Nord.</td>\
   </tr>\
   <tr>\
     <td>rickroll</td>\
-    <td>Never Gonna Give You Up</td>\
+    <td>Never Gonna Give You Up.</td>\
   </tr></table>";
   /*
   <tr>\
     <td>contact</td>\
     <td>How to get in touch with John Smith</td>\
-  </tr>\
-  <tr>\
-    <td>links</td>\
-    <td>See what links John Smith wants you to click on</td>\
   </tr>\
   <tr>\
     <td>cv</td>\
@@ -80,14 +80,11 @@ function savoirfaire(){
     <td>Premiere Pro</td>\
     <td>▰▰▰▰▰▰▰▰▱▱ 80%</td>\
   </tr>\
-  <tr>\
-    <td>Rickrolling</td>\
-    <td>▰▰▰▰▰▰▰▰▰▰ 100%</td>\
-  </tr></table>";
+  </table>";
 }
 
 function apropos(){
-  return "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>";
+  return "<p>Je suis un futur Ingénieur Informaticien !</p>";
 }
 /*
 function cv(){
@@ -97,16 +94,13 @@ function cv(){
 function credits(){
   return "<p>Built by <a href=\"https://www.github.com/CedArctic\" target=\"_blank\"><i class=\"fab fa-github\"></i> CedArctic</a></p>";
 }
-/*
-function links(){
-  return "<span style=\"color: #b5bd68;\"><h2>Links:</h2></span><ul>\
-  <li><a href=\"https://www.linkedin.com\" target=\"_blank\"><i class=\"fab fa-linkedin\"></i> LinkedIn</a></li>\
-  <li><a href=\"https://www.github.com\" target=\"_blank\"><i class=\"fab fa-github\"></i> Github</a></li>\
-  <li><a href=\"https://www.twitter.com\" target=\"_blank\"><i class=\"fab fa-twitter\"></i> Twitter</a></li>\
-  <li><a href=\"https://www.facebook.com\" target=\"_blank\"><i class=\"fab fa-facebook\"></i> Facebook</a></li>\
+
+function tradmc(){
+  return "<span style=\"color: #b5bd68;\"><h2>Trad MC :</h2></span><ul>\
+  <li><p>Une traduction de Minecraft en patois Bourguignon-Morvandiau du Nord : <a href=\"https://github.com/Fraleroy/bmn_fr\" target=\"_blank\"><i class=\"fab fa-github\"></i> bmn_fr</a></p></li>\
   </ul>";
 }
-*/
+
 function rickroll(){
   return "<p>We're no strangers to love<br>\
     You know the rules and so do I<br>\
@@ -200,18 +194,18 @@ function commandProcessor(e){
     if(txtInput == "aide"){
       document.getElementById('injected').innerHTML=aide();
     }else if (txtInput=="entièrement") {
-      document.getElementById('injected').innerHTML=apropos() + "\n\n\n" + savoirfaire() + "\n\n\n"; // + links() + "\n\n\n" + contact() + "\n\n\n" + cv()
+      document.getElementById('injected').innerHTML=apropos() + "\n\n\n" + savoirfaire() + "\n\n\n" + links(); // + "\n\n\n" + contact() + "\n\n\n" + cv()
     }else if (txtInput == "à-propos") {
       document.getElementById('injected').innerHTML=apropos();
     }/*else if (txtInput == "contact") {
       document.getElementById('injected').innerHTML=contact();
     }else if (txtInput == "cv") {
       document.getElementById('injected').innerHTML=cv();
-    }else if (txtInput=="skills") {
+    }*/else if (txtInput=="savoir-faire") {
       document.getElementById('injected').innerHTML=skills();
-    }else if (txtInput=="links") {
-      document.getElementById('injected').innerHTML=links();
-    }*/else if (txtInput == "rickroll") {
+    }else if (txtInput=="trad-mc") {
+      document.getElementById('injected').innerHTML=tradmc();
+    }else if (txtInput == "rickroll") {
       var win = window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", '_blank');
       win.focus();
       document.getElementById('injected').innerHTML=rickroll();
