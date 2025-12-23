@@ -1,15 +1,24 @@
 // Functions for each action-command.
 
-function help(){
-  return "<h2><span style=\"color:#eb926d;\">Help:</span></h2><table>\
+function aide(){
+  return "<h2><span style=\"color:#eb926d;\">Aide :</span></h2><table>\
   <tr>\
-    <td>all</td>\
+    <td>entièrement</td>\
     <td>Give me the complete picture</td>\
   </tr>\
   <tr>\
-    <td>about</td>\
+    <td>à-propos</td>\
     <td>Everything you ever wanted to know about John Smith</td>\
   </tr>\
+  <tr>\
+    <td>savoir-faire</td>\
+    <td>Get to know how good John Smith is at stuff</td>\
+  </tr>\
+  <tr>\
+    <td>rickroll</td>\
+    <td>Never Gonna Give You Up</td>\
+  </tr></table>";
+  /*
   <tr>\
     <td>contact</td>\
     <td>How to get in touch with John Smith</td>\
@@ -19,19 +28,12 @@ function help(){
     <td>See what links John Smith wants you to click on</td>\
   </tr>\
   <tr>\
-    <td>skills</td>\
-    <td>Get to know how good John Smith is at stuff</td>\
-  </tr>\
-  <tr>\
     <td>cv</td>\
     <td>Download John Smith's CV</td>\
   </tr>\
-  <tr>\
-    <td>rickroll</td>\
-    <td>Never Gonna Give You Up</td>\
-  </tr></table>";
+  */
 }
-
+/*
 function contact(){
   return "<h2><span style=\"color:#cc6666;\">Contact:</span></h2><table>\
   <tr>\
@@ -63,9 +65,9 @@ function contact(){
     <td>UK</td>\
   </tr></table>";
 }
-
-function skills(){
-  return "<h2><span style=\"color:#81a2be;\">Skills:</span></h2><table>\
+*/
+function savoirfaire(){
+  return "<h2><span style=\"color:#81a2be;\">Savoir-faire :</span></h2><table>\
   <tr>\
     <td>Photoshop</td>\
     <td>▰▰▰▰▰▰▱▱▱▱ 60%</td>\
@@ -84,7 +86,7 @@ function skills(){
   </tr></table>";
 }
 
-function about(){
+function apropos(){
   return "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>";
 }
 /*
@@ -195,12 +197,12 @@ function commandProcessor(e){
     var txtInput = document.getElementById('txtBox').value;
 
     //Select what info to print according to command
-    if(txtInput == "help"){
-      document.getElementById('injected').innerHTML=help();
-    }else if (txtInput=="all") {
-      document.getElementById('injected').innerHTML=about() + "\n\n\n" + skills() + "\n\n\n" + links() + "\n\n\n" + contact() + "\n\n\n" + cv();
-    }else if (txtInput == "about") {
-      document.getElementById('injected').innerHTML=about();
+    if(txtInput == "aide"){
+      document.getElementById('injected').innerHTML=aide();
+    }else if (txtInput=="entièrement") {
+      document.getElementById('injected').innerHTML=apropos() + "\n\n\n" + savoirfaire() + "\n\n\n"; // + links() + "\n\n\n" + contact() + "\n\n\n" + cv()
+    }else if (txtInput == "à-propos") {
+      document.getElementById('injected').innerHTML=apropos();
     }/*else if (txtInput == "contact") {
       document.getElementById('injected').innerHTML=contact();
     }else if (txtInput == "cv") {
@@ -213,10 +215,10 @@ function commandProcessor(e){
       var win = window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", '_blank');
       win.focus();
       document.getElementById('injected').innerHTML=rickroll();
-    }else if (txtInput == "credits") {
+    }else if (txtInput == "crédits") {
       document.getElementById('injected').innerHTML=credits();
     }else{
-      document.getElementById('injected').innerHTML = help();
+      document.getElementById('injected').innerHTML = aide();
     }
 
     //Clear input text box
