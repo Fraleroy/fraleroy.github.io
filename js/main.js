@@ -202,7 +202,7 @@ function commandProcessor(e){
     }else if (txtInput == "cv") {
       document.getElementById('injected').innerHTML=cv();
     }*/else if (txtInput=="savoir-faire") {
-      document.getElementById('injected').innerHTML=skills();
+      document.getElementById('injected').innerHTML=savoirfaire();
     }else if (txtInput=="trad-mc") {
       document.getElementById('injected').innerHTML=tradmc();
     }else if (txtInput == "rickroll") {
