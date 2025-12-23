@@ -194,7 +194,7 @@ function commandProcessor(e){
     if(txtInput == "aide"){
       document.getElementById('injected').innerHTML=aide();
     }else if (txtInput=="entièrement") {
-      document.getElementById('injected').innerHTML=apropos() + "\n\n\n" + savoirfaire() + "\n\n\n" + links(); // + "\n\n\n" + contact() + "\n\n\n" + cv()
+      document.getElementById('injected').innerHTML=apropos() + "\n\n\n" + savoirfaire() + "\n\n\n" + tradmc(); // + "\n\n\n" + contact() + "\n\n\n" + cv()
     }else if (txtInput == "à-propos") {
       document.getElementById('injected').innerHTML=apropos();
     }/*else if (txtInput == "contact") {
